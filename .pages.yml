@@ -1,0 +1,78 @@
+# Settings for Pages CMS (https://app.pagescms.org) — a friendly editor for this site
+media:
+  input: assets/photos
+  output: /assets/photos
+
+content:
+  - name: people
+    label: Family members
+    type: collection
+    path: _people
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, relation, born]
+      primary: title
+      sort: [generation, title]
+    fields:
+      - name: title
+        label: Full name
+        type: string
+        required: true
+      - name: relation
+        label: Relationship (e.g. Grandfather, father's side)
+        type: string
+      - name: generation
+        label: Generation (1 = oldest)
+        type: number
+      - name: born
+        label: Born (year, or "c. 1920")
+        type: string
+      - name: died
+        label: Died (year, leave empty if living)
+        type: string
+      - name: place
+        label: Place (village / town / country)
+        type: string
+      - name: photo
+        label: Portrait photo
+        type: image
+      - name: body
+        label: Life story
+        type: rich-text
+
+  - name: home
+    label: Home page
+    type: file
+    path: index.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+      - name: body
+        label: Page text
+        type: rich-text
+
+  - name: origins
+    label: Origins
+    type: file
+    path: origins.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+      - name: body
+        label: Page text
+        type: rich-text
+
+  - name: traditions
+    label: Traditions
+    type: file
+    path: traditions.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        type: string
+      - name: body
+        label: Page text
+        type: rich-text
