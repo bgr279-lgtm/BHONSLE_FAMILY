@@ -1,5 +1,5 @@
 ---
-title: People
+title: Father
 permalink: /people/
 ---
 
